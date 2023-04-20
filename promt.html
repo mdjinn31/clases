@@ -2,22 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="author" content="Francesc Ricart"/>
-	<title>Ejercicio condicionales - nivel principiante</title>
+	<meta name="author" content="Jonathan Rivera"/>
+	<title>Ejercicio condicionales</title>
 </head>
 <body>
 	
 <script>
-	var culpable = window.prompt("¿eres culpable?"); // si, no
-    alert("Hola Daira");
-	if(culpable=="si"){
-		document.write("irás a la cárcel");
-	}else if(culpable=="no"){
-		document.write("irás a casa");
-	}else{
-		document.write("la documentación por favor");
+	let notas = window.prompt("¿Cuantas Notas?"); // si, no
+    let promedio = 0;
+	let sumatioria = 0;
+
+	for(let i = 1; i <= notas; i++){
+		let notaTemp = parseInt(window.prompt("Ingrese Nota "+i));
+		sumatioria = sumatioria + notaTemp;
 	}
 
+	promedio = sumatioria / notas;
+	//document.write(sumatioria);
+
+	if(promedio >= 60){
+		document.write("Gano con una nota de: "+promedio);
+	}else{
+		document.write("Peridio con una nota de: "+promedio);
+	}
+
+	//document.write(promedio);
+
+/*	document.write("la documentación por favor");*/
 </script>
 
 </body>
