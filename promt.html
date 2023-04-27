@@ -12,8 +12,35 @@
 	let culpable = window.prompt("¿eres culpable?"); // Pedir informacion al usuario
     document.write("la documentación por favor"); // escribir en el documento html
 	*/
+  let numero1 = window.prompt("Ingrese un numero")
+
+  let numero2 = window.prompt("Ingrese un numero")
+
+	if (numero1 == 0 || numero2 == 0) {
+		
+		alert("No puede dividirse por 0")
+	} else {
+
+		let resultado =numero1 /numero2
+
+		document.write ("El resultado es: " +resultado)
+		
+	}
 
 </script>
 
 </body>
 </html>
+
+<!-- 
+En este ejercicio debes pedri dos números enteros y devolver el cociente de dividir el primero entre el segundo, 
+pero si este es cero no debe hacer la división, sino lanzar un mensaje de error
+
+*Si se entran el número 8 y 2, debe resultar 4*
+*Si se entran 4 y 0, dbe resultar en un mensaje de error.* -->
+
+
+
+
+
+
