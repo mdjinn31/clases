@@ -52,3 +52,11 @@ Una tienda aplica un descuento del 15% para las compras que incluyan más de 10 
 Crea un programa que pida la nota de un estudiante en los tres trimestres del curso y calcule la nota promedio. El resultado que dará será suspenso si la media es menor de 5, aprobado si está entre 5 y 7 y  Notable por encima de 7.
 
 *Para las notas 6, 8, 10 la media es 8 por tanto se califica como Notable*
+
+
+
+Se trata de escribir un script que diga si un número es par o es impar.
+Recordemos que un número es par si al dividirlo por 2 da como resto 0.
+
+*Si el número es 17, el programa debe decir que es impar.*'
+
