@@ -4,63 +4,64 @@
 	<meta charset="UTF-8">
 	<meta name="author" content="Jonathan Rivera"/>
 	<title>Ejercicio condicionales</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
-	
+	<div class="container">
+		<div class="row">
+			<div class="col d-flex align-items-center justify-content-center vh-20">
+				<h1>Ejercios de Daira</h1>
+			</div>
+		</div>
+		<div class="row justify-content-center align-items-center">
+			<div class="col bd-highlight">
+				<form id="elForm">
+					<div class="form-group">
+					<label for="exampleInputText">Ingrese un numero </label>
+					<input type="text" class="form-control" id="exampleInputText" aria-describedby="textHelp" placeholder="Ingrese una opcion">
+					<small id="textHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					</div>
+					<div class="row d-flex aligns-items-center">
+						<div class="col-2 d-flex justify-content-center"><button type="submit" class="btn btn-primary" >Submit</button></div>
+						<div class="col-2 d-flex justify-content-center"><button onclick="cleanText()" class="btn btn-primary" >Clear</button></div>
+					</div>
+				</form>
+			</div>
+			<div class="col-1"></div>
+			<div class="col-3">
+				<div id="rsponse">
+					
+				</div>
+			</div>
+		</div>
+	</div>
 <script>
-	/*
-	let culpable = window.prompt("¿eres culpable?"); // Pedir informacion al usuario
-    document.write("la documentación por favor"); // escribir en el documento html
-	### Ejercicio 1
-Se trata de escribir un script que diga si un número es par o es impar.
-Recordemos que un número es par si al dividirlo por 2 da como resto 0.
-
-*Si el número es 17, el programa debe decir que es impar.*
-
-### Ejercicio 8
-En un tramo de un rally los conductores no deben ir ni demasiado
- rápido ni demasiado lentos. Este ejercicio debe tomar la longitud del 
- tramo en kilometros y el tiempo empleado, si la velocidad está entre 40 y 60 
- km/h el conductor pasa la prueba en caso contrario es descalificado.
-
-	*/
 	
-	// let distancia = window.prompt("Ingrese la distancia")
-	// let tiempo = window.prompt("Ingrese el tiempo")
 
-	// let resultado = (((distancia/tiempo) >= 40)&&((distancia/tiempo) <= 60)) 
-	// 				? "Paso la Prueva" 
-	// 				: "Esta descalificado"
+	const element = document.querySelector('#elForm');
+	const texto = document.querySelector('#exampleInputText')
+	const response = document.querySelector('#rsponse')
+	
+	element.addEventListener('submit', event => {
+		event.preventDefault();
+		response.innerHTML = parImpar(texto.value)
+	})
 
-	// console.log((distancia/tiempo))
-	// document.write(resultado)
+	const cleanText = () =>{
+		response.innerHTML = ''
+		texto.value = ''
+	}
 
-//alert((numero % 2 == 0)? "Es un numero Par" : "Es un numero impar")
-
-	 let distancia = window.prompt("Ingrese la distancia")
-
-	 switch (true) {
-		case distancia == 'a' || distancia == 'A':
-				alert("Ingreso A o a")
-			break;
-	 
-		case distancia == 'b' || distancia == 'B':
-				alert("Ingreso B o b")
-			break;
-	 
-		case distancia == 'c' || distancia == 'C':
-				alert("Ingreso C o c")
-			break;
-	 
-		default:
-				alert("Ingreso ni mierda")
-			break;
-	 }
-
+	//const parImpar = (n) => (n%2==0)?`El numero ${n} es par!`:`El numero ${n} es impar`
+	const parImpar = (n=0) => (n!=0)
+								?((n%2==0)
+									?`El numero ${n} es par!`
+									:`El numero ${n} es impar`)
+								:"Debe ingresar un numero distinto a 0"
 
 
 
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
