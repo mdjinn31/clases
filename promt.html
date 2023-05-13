@@ -11,7 +11,54 @@
 	/*
 	let culpable = window.prompt("¿eres culpable?"); // Pedir informacion al usuario
     document.write("la documentación por favor"); // escribir en el documento html
+	### Ejercicio 1
+Se trata de escribir un script que diga si un número es par o es impar.
+Recordemos que un número es par si al dividirlo por 2 da como resto 0.
+
+*Si el número es 17, el programa debe decir que es impar.*
+
+### Ejercicio 8
+En un tramo de un rally los conductores no deben ir ni demasiado
+ rápido ni demasiado lentos. Este ejercicio debe tomar la longitud del 
+ tramo en kilometros y el tiempo empleado, si la velocidad está entre 40 y 60 
+ km/h el conductor pasa la prueba en caso contrario es descalificado.
+
 	*/
+	
+	// let distancia = window.prompt("Ingrese la distancia")
+	// let tiempo = window.prompt("Ingrese el tiempo")
+
+	// let resultado = (((distancia/tiempo) >= 40)&&((distancia/tiempo) <= 60)) 
+	// 				? "Paso la Prueva" 
+	// 				: "Esta descalificado"
+
+	// console.log((distancia/tiempo))
+	// document.write(resultado)
+
+//alert((numero % 2 == 0)? "Es un numero Par" : "Es un numero impar")
+
+	 let distancia = window.prompt("Ingrese la distancia")
+
+	 switch (true) {
+		case distancia == 'a' || distancia == 'A':
+				alert("Ingreso A o a")
+			break;
+	 
+		case distancia == 'b' || distancia == 'B':
+				alert("Ingreso B o b")
+			break;
+	 
+		case distancia == 'c' || distancia == 'C':
+				alert("Ingreso C o c")
+			break;
+	 
+		default:
+				alert("Ingreso ni mierda")
+			break;
+	 }
+
+
+
 
 </script>
 
