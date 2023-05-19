@@ -13,30 +13,8 @@
 				<h1>Ejercios de Daira</h1>
 			</div>
 		</div>
-		<div class="row justify-content-center align-items-center">
-			<div class="col bd-highlight">
-				<form id="elForm">
-					<div class="form-group">
-					<label for="exampleInputText">Ingrese un numero </label>
-					<input type="text" class="form-control" id="exampleInputText" aria-describedby="textHelp" placeholder="Ingrese una opcion">
-					<small id="textHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-					</div>
-					<div class="row d-flex aligns-items-center">
-						<div class="col-2 d-flex justify-content-center"><button type="submit" class="btn btn-primary" >Submit</button></div>
-						<div class="col-2 d-flex justify-content-center"><button onclick="cleanText()" class="btn btn-danger" >Clear</button></div>
-					</div>
-				</form>
-			</div>
-			<div class="col-1"></div>
-			<div class="col-3">
-				<div class="bg-info rounded-pill">
-					<div class="alert alert-succses" role="alert" id="rsponse">
-						
-					  </div>
-				</div>
-			</div>
-		</div>
-		<div class="row justify-content-center align-items-center" style="border: 3px black solid; overflow: hidden; padding: 10px; margin-top: 20px;" >
+
+		<div class="row justify-content-center align-items-center border border-warning" style="overflow: hidden; padding: 10px; margin-top: 20px;" >
 			<div class="col bd-highlight">
 				<form id="opciones">
 					<div class="form-group">
@@ -45,8 +23,8 @@
 					<small id="textViaje" class="form-text text-muted">Como es que va a viajar.</small>
 					</div>
 					<div class="row d-flex aligns-items-center">
-						<div class="col-2 d-flex justify-content-center"><button type="submit" class="btn btn-primary" >Seleccione</button></div>
-						<!-- <div class="col-2 d-flex justify-content-center"><button onclick="cleanText()" class="btn btn-danger" >Clear</button></div> -->
+						<div class="col-3 d-flex justify-content-center"><button type="submit" class="btn btn-primary" >Seleccione</button></div>
+						<div class="col-3 d-flex justify-content-center"><button onclick="cleanText()" class="btn btn-danger" >Clear</button></div>
 					</div>
 				</form>
 			</div>
@@ -110,51 +88,13 @@
 
 	formluario.addEventListener('submit',fCallBack)
 	
-	
-	
-	/*Funcion de flecha gorda - fat arrow*/
-	const seleccion = () => {
-
+	function cleanText(){
+		comoVaViajar.value = ""
+		respu.value = ""
+		respu.classList.remove("alert-succses")
+		respu.classList.remove("alert-danger")
+		respu.classList.add("alert-info")
 	}
-
-	/*funcion anonima*/
-	const selct2 = function(){
-
-	}
-
-	/*funcion tradicional*/
-	function select3(){
-
-	}
-
-
-
-	const element = document.querySelector('#elForm');
-	const texto = document.querySelector('#exampleInputText')
-	const response = document.querySelector('#rsponse')
-	
-	element.addEventListener('submit', event => {
-		event.preventDefault();
-		response.innerHTML = parImpar(texto.value) || ""
-	})
-
-	const cleanText = () =>{
-		response.innerHTML = ''
-		texto.value = ''
-	}
-
-	const parImpar = (n=0) => {
-		const res = n%2
-		if(res != 0){
-			response.classList.remove("alert-succses")
-			response.classList.add("alert-danger")
-		}else{
-			response.classList.add("alert-succses")
-			response.classList.remove("alert-danger")
-		}
-		return (res == 0)?((n!=0)?`El numero ${n} es Par!`:"Ingrese numero"):`El numero ${n} es Impar!`
-	}
-
 
 
 </script>
