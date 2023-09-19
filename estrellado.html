@@ -11,11 +11,31 @@
         const estrellado = `😵‍💫 `
         const gataLove = `😻 `
         const gataMad = `😼 `
-        const size = parseInt(window.prompt("Ingrese la dimension: ",0))
+        let size = 0
+        
+        
+        do {
+            size = parseInt(window.prompt("Ingrese la dimension: ",0))
+        } while ((size%2==0));
+        
 
         for(let fila = 0; fila< size; fila++){
             let linea = ''
             for(let columna = 0; columna < size; columna++){
+                //linea += (columna == fila)?gataLove:gataMad
+                let mitad = ((size-1)/2)+1
+                console.log(mitad);
+                
+                if(   (fila == mitad-1)
+                    ||(columna == mitad-1)
+                    ||(columna==0 && fila<mitad)
+                    ||(columna==size-1 && fila>=mitad)
+                    ||(fila==0 && columna>=mitad)
+                    ||(fila == size-1 && columna<mitad)) {
+                    linea += gataLove
+                }else{
+                    linea += gataMad
+                }
             /*
                 if((fila>0 && fila < size-1)&&(columna>0 && columna < size-1)){
                     linea += gataMad
@@ -30,8 +50,8 @@
                 varialbe = (<CONDICION>)?SI_ES_VERDADERO:SI_ESFALSO
             */
                 //linea += ((fila>0 && fila<size-1)&&(columna>0 && columna<size-1))?gataMad:gataLove
-                linea +=  ((fila>0 && fila<size-1)&&(columna>0 && columna<size-1))?gataMad:gataLove
-                console.log(linea);
+                //linea +=  ((fila>0 && fila<size-1)&&(columna>0 && columna<size-1))?gataMad:gataLove
+                //console.log(linea);
             }
             document.write(linea)
             document.write('<br>')
