@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let linea = ''
+
+        const dimension = parseInt(window.prompt("Ingrese la dimension",0))
+
+        for (let filas = 0; filas < dimension; filas++) {
+           linea = ''
+            for (let columnas = 0; columnas < dimension; columnas++) {
+
+                linea += ((columnas>0 && columnas < dimension-1)&&(filas>0 && filas < dimension-1))
+                            ?`&nbsp;&nbsp;&nbsp;`
+                            :`* `
+
+            }
+            document.write(`${linea}<br>`)
+            
+        }
+
+        let n = dimension;
+        // External loop
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= n - i; j++) {
+                //document.write(`&nbsp;&nbsp;`)
+                document.write(j)
+            }
+            // printing stars
+            for (let k = 0; k < 2 * i - 1; k++) {
+                document.write(`*`)
+            }
+            document.write(`<br>`)
+        //console.log();
+        }
+        
+    </script>
+</body>
+</html>
+

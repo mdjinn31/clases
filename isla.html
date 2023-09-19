@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isla</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row-cols-auto justify-content-center align-items-center g-2">
+            <h3>Isla</h3>
+            <div class="col">&nbsp;</div>
+            <div class="col" id="camino">Column</div>
+            <div class="col">
+                <div class="mb-3">
+                  <label for="" class="form-label">Distnacia</label>
+                  <input type="text"
+                    class="form-control" name="distance" id="distance" aria-describedby="helpId" placeholder="">
+                  <small id="helpId" class="form-text text-muted">La distancia desde del barco a recorrer</small>
+                </div>
+                <input name="back" id="back" class="btn btn-primary" type="button" value="Retroceder">
+                <input name="fordware" id="fordware" class="btn btn-primary" type="button" value="Avanzar">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+        const isla = `🏝`,
+            ola = `🌊`,
+            barco = `⛵️`,
+            distance = document.querySelector('#distance'),
+            back = document.querySelector('#back'),
+            camino = document.querySelector('#camino'),
+            fordware = document.querySelector('#fordware')
+
+        let steps = 0
+        let cam = []
+
+        const createPath = (steps) => {
+            let road = `${barco} `
+            for (let i = 0; i < steps; i++)  road += `${ola} `
+            road += `${isla} `
+            cam = road.split(' ')
+            cam.pop()
+            camino.innerHTML = road
+        }
+
+        const btStatus = () =>{
+            if(steps>0) back.disabled = false
+            if(steps==0) back.disabled = true
+            if(steps>=cam.length-1) {
+                   back.disabled = true
+                   fordware.disabled = true
+            }
+        }
+
+        const move = (direction) => {
+            if((steps < cam.length-1)&&(steps >= 0)){
+                switch (direction) {
+                    case 'adelante':
+                        aux = cam[steps+1]
+                        cam[steps+1] = cam[steps]
+                        cam[steps] = aux
+                        steps++                        
+                        break;
+                    case 'atras':
+                        aux = cam[steps-1]
+                        cam[steps-1] = cam[steps]
+                        cam[steps] = aux
+                        steps--                        
+                        break;
+                }
+                camino.innerHTML = cam.toString().replaceAll(',', ' ')
+                btStatus()
+            }
+        }
+
+        distance.addEventListener('change', e => {
+            if(isNaN(e.target.value)) alert("La distancia debe de ser un numero")
+            steps = 0
+            cam = []
+            fordware.disabled = false
+            createPath(e.target.value)
+        })
+
+        document.addEventListener('keydown', e => {
+            if((steps < cam.length-1)&&(steps >= 0)){
+                switch (e.key) {
+                    case "ArrowLeft":
+                        if (steps>0)move('atras')
+                        break;
+                    case "ArrowRight":
+                        if(steps<=cam.length)move('adelante')
+                        break;
+                }
+            }
+        })
+
+        fordware.addEventListener('click', () => move('adelante'))
+        back.addEventListener('click',  () => move('atras'))
+
+        fordware.disabled = true
+        back.disabled = true
+    </script>
+</body>
+</html>

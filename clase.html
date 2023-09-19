@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Jonathan Rivera"/>
+	<title>Ejercicio condicionales</title>
+</head>
+<body>
+	
+<script>
+	/*
+	    let culpable = window.prompt("EL_MENSAJE"); // Pedir informacion al usuario
+        document.write("LOQ"); // escribir en el documento html
+	*/
+
+	/*Operoradores Ternarios*/
+/*	let variable = 1
+    variable = "cadena"
+	let otraVariable = (variable == 1) ? "valor Verdadero"  : "valor Falso"
+*/
+	// if( variable > 1){
+	// 	otraVariable = "valor Verdaero"
+	// }else{
+	// 	otraVariable = "valor FAlso"
+	// }
+     
+    /*
+        Int 9, 4
+        Float 4.2, 4.3
+        String Catesto
+        Symboles 
+
+        arrays [0,1,2,3]
+        objetos {llave:valor}
+
+        +  2+1
+        - 3-1
+        / 9/3
+        * 2*5
+        **  2**4 (2^4)
+        % 9/2 = 1
+        % 9/3 = 0
+
+        if(a= 1){
+            if(){
+
+            }
+        }else{
+
+
+        }
+
+### Ejercicio 1
+Se trata de escribir un script que diga si un número es par o es impar.
+Recordemos que un número es par si al dividirlo por 2 da como resto 0.
+
+    */
+
+    /*
+### Ejercicio 9
+Una tienda aplica un descuento del 15% para las compras que incluyan más de 10 artículos iguales cuyo precio sea superior a 40 euros. Tu programa debe comprobar y calcular la cantidad a pagar sabiendo el número de artículos y el precio de cada uno.
+
+*Por ejemplo si compras 20 artículos de 10 euros se te descuenta un 15% del total pagarías 20*10 - 20*10*0.15 = 170 eruos.*
+
+### Ejercicio 10
+Crea un programa que pida la nota de un estudiante en los tres trimestres del curso y calcule la nota promedio. El resultado que dará será suspenso si la media es menor de 5, aprobado si está entre 5 y 7 y  Notable por encima de 7.
+
+*Para las notas 6, 8, 10 la media es 8 por tanto se califica como Notable*
+    */
+
+/*
+    let alumnos = []
+    let notas = []
+    let promedio = 0
+
+    if(confirm("mi mensaje")){
+
+        
+        for( let alumno=0; alumno<=2; alumno++){
+            promedio = 0
+            alert("Ingrese las notas del alumno "+ (alumno+1))
+            for( let nota=0;nota<=2;nota++){
+                notas[nota] = parseInt(window.prompt('Ingrese nota '+(nota+1),0)) 
+            }    
+            notas.forEach( (element,indice) => {
+                promedio += element        
+            });
+            alumnos[alumno] = promedio / notas.length
+        }
+
+        console.log(alumnos)
+        alumnos.forEach((alumno,indice)=>{
+            console.log("Nonta de alumno "+(indice+1)+": "+alumno)
+            console.log("Nonta de alumno "+(indice+1)+": "+alumno)
+        })
+
+        //console.log(notas.length)
+        //console.log(notas)
+    }
+
+
+
+    if(confirm("agregar datos")){
+
+        do{
+            console.log("hola mundos");
+        }while(!confirm("abregar otro"))
+    }
+    */
+   /*
+   let descuento = 0
+   let precio = []
+   let total = 0
+
+
+   productos = parseInt(window.prompt('Ingrese una cantidad de productos: ', 0))
+   
+   
+switch (true) {
+    case productos>=10:
+        descuento = 20
+        break;
+    case productos == 8:
+        descuento = 15
+        break;
+    case productos == 7:
+        descuento = 5
+        break;
+    default:
+        descuento = 0
+        break;
+}
+
+
+for (let prod=0; prod<productos; prod++){
+    let precioTemp
+    //precio[prod] = parseFloat(window.prompt('Ingrese el precio de su producto: '+(prod+1), 0))
+    //precio[prod] = parseFloat(window.prompt('Ingrese el precio de su producto: '+(prod+1), 0))
+
+    do {
+        precioTemp = parseFloat(window.prompt('Ingrese el precio de su producto: '+(prod+1), 0))
+
+    } while (isNaN(precioTemp));
+
+    precio[prod] = precioTemp
+}
+
+precio.forEach((prod,indice) => {
+    let subTotal = prod - (prod * descuento / 100)
+    total += subTotal
+}) 
+
+const totalRecudx = precio.reduce((valorPrevio,valorActual) =>  valorPrevio + (valorActual - (valorActual * descuento/100)) ,0)
+
+console.log(`Para Total Reduce es: ${totalRecudx}`);
+console.log(`Para Total Total es: ${total}`);
+
+*/
+/*
+const checkDimensiones = (x,y,max) => (((y>0)&&(y<max-1))&&((x>0)&&(x<max-1)))?true:false
+let dimension = 0
+do {
+    dimension = parseInt(window.prompt("Ingrese la dimension: ",0))
+} while ((dimension <= 2)||(isNaN(dimension)));
+
+for (let i = 0; i < dimension; i++) {
+    let linea = ""
+    for (let j = 0; j < dimension; j++) linea += (checkDimensiones(j,i,dimension))?`&nbsp;&nbsp;&nbsp;`:`* `
+    document.writeln(`${linea}<br>`)
+}
+*/
+/*
+const checkDimensiones = (x,y,maxX,maxY) => (((y>0)&&(y<maxY-1))&&((x>0)&&(x<maxX-1)))?true:false
+
+let filas = 0, columnas = 0
+do {
+    do {
+        filas = parseInt(window.prompt("Ingrese filas: ",0))
+    } while ((filas <=2)||(isNaN(filas)));
+    
+    do {
+        columnas = parseInt(window.prompt("Ingrese filas: ",0))
+    } while ((columnas <=2)||(isNaN(columnas)));
+} while (!(filas !== columnas));
+
+for (let y = 0; y < filas; y++) {
+    let linea = ''
+    for (let x = 0; x < columnas; x++) linea += `* `
+    document.writeln(`${linea}<br>`)
+}
+document.write(`<br><br>`)
+for (let y = 0; y < filas; y++) {
+    let linea = ''
+    for (let x = 0; x < columnas; x++) linea += (checkDimensiones(x,y,columnas,filas))?`&nbsp;&nbsp;&nbsp;`:`* `
+    document.writeln(`${linea}<br>`)
+}
+
+
+*/
+
+/*
+let dimension = 0
+do {
+    dimension = parseInt(window.prompt("Ingrese la dimension: ",0))
+} while ((dimension <= 3)||(isNaN(dimension)));
+
+
+for (let filas = 0; filas < dimension; filas++) {
+    let linea = ''   
+    for (let columnas = 0; columnas <= filas; columnas++) {
+        linea += `* `        
+    }
+    document.writeln(`${linea}<br>`)
+}
+*/
+
+/*
+let dimension = 0
+do {
+    dimension = parseInt(window.prompt("Ingrese la dimension: ",0))
+} while ((dimension <= 3)||(isNaN(dimension)));
+
+
+for (let filas = dimension; filas > 0; filas--) {
+    let linea = ''   
+    console.log(filas);
+    for (let columnas = filas; columnas > 0; columnas--) {
+        linea += `* `        
+    }
+    document.writeln(`${linea}<br>`)
+}
+*/
+
+/*
+let dimension = 0
+do {
+    dimension = parseInt(window.prompt("Ingrese la dimension: ",0))
+} while ((dimension <= 3)||(isNaN(dimension)));
+
+for (let filas = 0; filas < dimension; filas++) {
+    let linea = ''   
+    for (let columnas = 0; columnas <= filas; columnas++) {
+        linea += `* `        
+    }
+    document.writeln(`${linea}<br>`)
+}
+for (let filas = dimension-1; filas > 0; filas--) {
+    let linea = ''   
+     for (let columnas = filas; columnas > 0; columnas--) {
+        linea += `* `        
+    }
+    document.writeln(`${linea}<br>`)
+}
+*/
+
+/*
+let dimension = 0
+let piramide = []
+do {
+    dimension = parseInt(window.prompt("Ingrese la dimension: ",0))
+} while ((dimension <= 3)||(isNaN(dimension)));
+
+for (let col = 0; col < dimension-1; col++) {
+    let linea = []
+    for (let row = col; row < dimension-col; row++) {
+        linea[row] = `* `
+    }
+    linea = Array.from(linea, item => typeof item === 'undefined' ? `&nbsp;&nbsp;` : item);
+    piramide.push(linea)
+    document.write(`${linea.join(' ')}<br>`)
+}
+for(let line = piramide.length-1; line >=0; line--){
+    document.write(`${piramide[line].join(' ')}<br>`)
+}
+*/
+
+    //document.write(`&#9632;`)
+    //document.write(`&#9633;`)
+    //document.write(`&#x25A0;`)
+    //let tile = (y%2==0)?`&#9632;`:`&#9633;`
+
+
+for (let y = 0; y < 8; y++) {
+    let tile = ''
+    for (let x = 0; x < 8; x++) {
+        if(y%2==0){
+            tile = (x%2==0)?`&#9632;`:`&#9633;`
+        }else{
+            tile = (x%2==0)?`&#9633;`:`&#9632;`
+        }
+        document.write(`${tile}&nbsp;&nbsp;`)
+    }
+    document.write(`<br>`)
+}
+
+document.write(`<br>`)
+document.write(`<br>`)
+
+for (let y = 0; y < 8; y++) {
+    let tile = ''
+    for (let x = 0; x < 8; x++) {
+        tile = (y%2==0)?((x%2==0)?`&#9632;`:`&#9633;`):((x%2==0)?`&#9633;`:`&#9632;`)
+        document.write(`${tile}&nbsp;&nbsp;`)
+    }
+    document.write(`<br>`)
+}
+
+document.write(`<br>`)
+document.write(`<br>`)
+
+for (let y = 0; y < 8; y++) {
+    for (let x = 0; x < 8; x++) document.write(`${(y%2==0)?((x%2==0)?`&#9632;`:`&#9633;`):((x%2==0)?`&#9633;`:`&#9632;`)}&nbsp;&nbsp;`)
+    document.write(`<br>`)
+}
+
+</script>
+
+</body>
+</html>
