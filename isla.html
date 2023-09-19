@@ -34,8 +34,10 @@
             distance = document.querySelector('#distance'),
             back = document.querySelector('#back'),
             camino = document.querySelector('#camino'),
-            fordware = document.querySelector('#fordware')
-
+            fordware = document.querySelector('#fordware'),
+            corazon = `💗 ${ola} ${barco}`
+            
+        console.log(corazon);
         let steps = 0
         let cam = []
 
@@ -43,7 +45,9 @@
             let road = `${barco} `
             for (let i = 0; i < steps; i++)  road += `${ola} `
             road += `${isla} `
+            console.log(road);
             cam = road.split(' ')
+            console.log(cam);
             cam.pop()
             camino.innerHTML = road
         }
@@ -59,6 +63,7 @@
 
         const move = (direction) => {
             if((steps < cam.length-1)&&(steps >= 0)){
+                console.log(`Entroo en la condicionla ${steps}`);
                 switch (direction) {
                     case 'adelante':
                         aux = cam[steps+1]
@@ -73,6 +78,7 @@
                         steps--                        
                         break;
                 }
+                console.log(cam);
                 camino.innerHTML = cam.toString().replaceAll(',', ' ')
                 btStatus()
             }
@@ -104,6 +110,11 @@
 
         fordware.disabled = true
         back.disabled = true
+
+
+
+        
+
     </script>
 </body>
 </html>
