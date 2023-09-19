@@ -22,8 +22,16 @@
                 }else{
                     linea += gataLove
                 }
+                if(<CONDICION>){
+                    varialbe =  SI_ES_VERDADRO
+                }else{
+                    varialbe = SI_ES_FALSO
+                }
+                varialbe = (<CONDICION>)?SI_ES_VERDADERO:SI_ESFALSO
             */
-                linea += ((fila>0 && fila<size-1)&&(columna>0 && columna<size-1))?gataMad:gataLove
+                //linea += ((fila>0 && fila<size-1)&&(columna>0 && columna<size-1))?gataMad:gataLove
+                linea +=  ((fila>0 && fila<size-1)&&(columna>0 && columna<size-1))?gataMad:gataLove
+                console.log(linea);
             }
             document.write(linea)
             document.write('<br>')
