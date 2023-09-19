@@ -24,18 +24,14 @@
             for(let columna = 0; columna < size; columna++){
                 //linea += (columna == fila)?gataLove:gataMad
                 let mitad = ((size-1)/2)+1
-                console.log(mitad);
-                
-                if(   (fila == mitad-1)
-                    ||(columna == mitad-1)
-                    ||(columna==0 && fila<mitad)
-                    ||(columna==size-1 && fila>=mitad)
-                    ||(fila==0 && columna>=mitad)
-                    ||(fila == size-1 && columna<mitad)) {
+                linea += ((fila == mitad-1)||(columna == mitad-1)||(columna==0 && fila<mitad)||(columna==size-1 && fila>=mitad)||(fila==0 && columna>=mitad)||(fila == size-1 && columna<mitad))?gataLove:gataMad
+                /*
+                if( (fila == mitad-1)||(columna == mitad-1)||(columna==0 && fila<mitad)||(columna==size-1 && fila>=mitad)||(fila==0 && columna>=mitad)||(fila == size-1 && columna<mitad) ) {
                     linea += gataLove
                 }else{
                     linea += gataMad
                 }
+                */
             /*
                 if((fila>0 && fila < size-1)&&(columna>0 && columna < size-1)){
                     linea += gataMad
