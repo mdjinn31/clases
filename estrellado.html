@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const estrellado = `😵‍💫 `
+        const gataLove = `😻 `
+        const gataMad = `😼 `
+        const size = parseInt(window.prompt("Ingrese la dimension: ",0))
+
+        for(let fila = 0; fila< size; fila++){
+            let linea = ''
+            for(let columna = 0; columna < size; columna++){
+            /*
+                if((fila>0 && fila < size-1)&&(columna>0 && columna < size-1)){
+                    linea += gataMad
+                }else{
+                    linea += gataLove
+                }
+            */
+                linea += ((fila>0 && fila<size-1)&&(columna>0 && columna<size-1))?gataMad:gataLove
+            }
+            document.write(linea)
+            document.write('<br>')
+        }
+        
+    </script>
+
+</body>
+
+
+</html>
